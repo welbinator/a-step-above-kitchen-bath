@@ -1,0 +1,624 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + '/';
+
+const phoneDisplay = '(618) 942-2000';
+const phoneTel = '6189422000';
+const address = '3108 S Park Ave, Herrin, IL 62948';
+const mapsUrl =
+  'https://www.google.com/maps/search/?api=1&query=A+Step+Above+Kitchen+%26+Bath+Design+3108+S+Park+Ave+Herrin+IL+62948';
+const dirsUrl =
+  'https://www.google.com/maps/dir/?api=1&destination=3108+S+Park+Ave+Herrin+IL+62948';
+---
+
+<Layout>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href={`${base}#top`}>
+        <img src={`${base}favicon.svg`} width="38" height="38" alt="" />
+        <span>
+          <strong>A Step Above</strong>
+          <em>Kitchen &amp; Bath Design</em>
+        </span>
+      </a>
+      <nav class="desk" aria-label="Primary">
+        <a href={`${base}#work`}>The work</a>
+        <a href={`${base}#services`}>Services</a>
+        <a href={`${base}#visit`}>Visit</a>
+        <a href={`${base}#contact`}>Contact</a>
+      </nav>
+      <a class="btn btn-walnut top-cta" href={`tel:${phoneTel}`}>Call us</a>
+      <button class="burger" type="button" id="navToggle" aria-expanded="false" aria-controls="mnav">
+        <span class="sr-only">Menu</span>
+        <i></i><i></i>
+      </button>
+    </div>
+    <nav class="mnav" id="mnav" hidden>
+      <a href={`${base}#work`}>The work</a>
+      <a href={`${base}#services`}>Services</a>
+      <a href={`${base}#visit`}>Visit</a>
+      <a href={`${base}#contact`}>Contact</a>
+      <a class="btn btn-walnut" href={`tel:${phoneTel}`}>{phoneDisplay}</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Photo LEFT + copy RIGHT (≠ full-bleed car lot / centered navy heroes) -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <figure class="hero-photo">
+          <img
+            src={`${base}images/listing.jpg`}
+            alt="Remodeled kitchen with dark cabinetry, light counters, and a large island — from the A Step Above Kitchen & Bath Design Google listing"
+            width="1600"
+            height="1200"
+          />
+        </figure>
+        <div class="hero-copy">
+          <p class="eyebrow">Kitchen remodeler · Herrin, IL</p>
+          <h1>Kitchens &amp; baths designed a step above the ordinary.</h1>
+          <p class="lede">
+            A Step Above Kitchen &amp; Bath Design serves homeowners who want a thoughtful remodel —
+            call to talk through your space, timing, and next steps.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-walnut" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
+            <a class="btn btn-line" href={`${base}#contact`}>Request a consult</a>
+          </div>
+          <p class="rating">★ 4.1 on Google · 19 reviews</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="wrap strip-row">
+        <div><strong>Kitchen remodeler</strong><span>Google category</span></div>
+        <div><strong>Tue 8–4</strong><span>Hours verified on listing</span></div>
+        <div><strong>Accessible</strong><span>Entrance + parking lot</span></div>
+        <div><strong>Herrin</strong><span>3108 S Park Ave</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap work-head">
+        <div>
+          <p class="kicker">The work</p>
+          <h2>Rooms that feel finished — not fussy.</h2>
+        </div>
+        <p>
+          The photo above is from the business Google listing: a full kitchen remodel with deep cabinetry,
+          light counters, and a gathering island. Call to discuss what you want for your home.
+        </p>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <p class="kicker">Services</p>
+        <h2>Where we can help.</h2>
+        <p class="section-sub">
+          No public package list or prices are published online. These are category-faithful starting
+          points — confirm details when you call.
+        </p>
+        <div class="svc">
+          <article>
+            <h3>Kitchen remodels</h3>
+            <p>Cabinetry, counters, layout, and finishes that make the heart of the home work again.</p>
+          </article>
+          <article>
+            <h3>Bath design</h3>
+            <p>Bathrooms planned for daily use — cleaner lines, better storage, lasting materials.</p>
+          </article>
+          <article>
+            <h3>Design conversation</h3>
+            <p>Start with a call about your goals, timeline, and what “a step above” means for your house.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit">
+      <div class="wrap visit-grid">
+        <div>
+          <p class="kicker">Visit / call</p>
+          <h2>Herrin showroom location</h2>
+          <dl class="facts">
+            <div>
+              <dt>Address</dt>
+              <dd><a href={mapsUrl} target="_blank" rel="noopener">{address}</a></dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href={`tel:${phoneTel}`}>{phoneDisplay}</a></dd>
+            </div>
+            <div>
+              <dt>Hours (verified)</dt>
+              <dd>
+                Tuesday 8:00 AM – 4:00 PM
+                <em>Listing also notes Wednesday opens 8:00 AM — call for the full week</em>
+              </dd>
+            </div>
+            <div>
+              <dt>Accessibility</dt>
+              <dd>Wheelchair accessible entrance and parking lot</dd>
+            </div>
+            <div>
+              <dt>Plus code</dt>
+              <dd>QX3H+73 Herrin, Illinois</dd>
+            </div>
+          </dl>
+          <div class="visit-actions">
+            <a class="btn btn-navy" href={dirsUrl} target="_blank" rel="noopener">Directions</a>
+            <a class="btn btn-line" href={mapsUrl} target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </div>
+        <aside class="aside-card">
+          <p class="aside-kicker">Southern Illinois</p>
+          <h3>Based in Herrin</h3>
+          <p>
+            Ask when you call whether your project is in range. Start with the address and a few photos
+            of your current kitchen or bath if you have them.
+          </p>
+          <a href={`tel:${phoneTel}`}>Talk through your project →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Let’s talk about your remodel.</h2>
+          <p class="lede-sm">
+            Share the room, rough timing, and best number to reach you. Phone is fastest.
+          </p>
+          <a class="btn btn-walnut" href={`tel:${phoneTel}`}>Call {phoneDisplay}</a>
+        </div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="hp" aria-hidden="true">
+            <label for="website_hp">Website</label>
+            <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off" />
+          </div>
+          <label>
+            Name
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <div class="two">
+            <label>
+              Email
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" autocomplete="tel" />
+            </label>
+          </div>
+          <label>
+            Message
+            <textarea
+              name="message"
+              rows="5"
+              required
+              placeholder="Kitchen or bath? Address? Preferred timing?"
+            ></textarea>
+          </label>
+          <button class="btn btn-navy" type="submit" id="contactSubmit">Send message</button>
+          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>
+        <strong>A Step Above Kitchen &amp; Bath Design</strong>
+        <p>Kitchen remodeler · Herrin, Illinois</p>
+      </div>
+      <div class="foot-links">
+        <a href={`tel:${phoneTel}`}>{phoneDisplay}</a>
+        <a href={mapsUrl} target="_blank" rel="noopener">{address}</a>
+      </div>
+      <p class="copy">© {new Date().getFullYear()} A Step Above Kitchen &amp; Bath Design</p>
+    </div>
+  </footer>
+
+  <div class="dock">
+    <a class="btn btn-walnut" href={`tel:${phoneTel}`}>Call</a>
+    <a class="btn btn-line" href={`${base}#contact`}>Message</a>
+  </div>
+</Layout>
+
+<style>
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); border: 0;
+  }
+  .top {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(247, 245, 242, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top-row {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 0.65rem;
+    min-width: 0; margin-right: auto; color: var(--navy);
+  }
+  .brand span { display: grid; line-height: 1.1; min-width: 0; }
+  .brand strong {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .brand em {
+    font-style: normal;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .desk {
+    display: none;
+    gap: 1.15rem;
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .desk a:hover { color: var(--navy); }
+  .top-cta { display: none; padding: 0.65rem 1rem; }
+  .burger {
+    width: 42px; height: 42px; border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    display: grid; place-content: center; gap: 5px; cursor: pointer;
+  }
+  .burger i { display: block; width: 16px; height: 2px; background: var(--navy); }
+  .mnav {
+    display: grid; gap: 0.15rem; padding: 0.2rem 1rem 1rem;
+    border-top: 1px solid var(--line);
+    background: var(--cream);
+  }
+  .mnav[hidden] { display: none !important; }
+  .mnav a { padding: 0.7rem 0.2rem; font-weight: 700; color: var(--navy); }
+
+  .hero {
+    padding: 1.5rem 0 2.5rem;
+    background: var(--cream);
+  }
+  .hero-grid {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .hero-photo {
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 50px rgba(27, 36, 48, 0.12);
+  }
+  .hero-photo img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+  }
+  .eyebrow {
+    margin: 0 0 0.7rem;
+    color: var(--walnut);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+  .hero h1 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.85rem, 4.8vw, 2.85rem);
+    color: var(--navy);
+  }
+  .lede {
+    margin: 0 0 1.2rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 32rem;
+  }
+  .hero-actions {
+    display: flex; flex-wrap: wrap; gap: 0.55rem;
+    margin-bottom: 0.95rem;
+  }
+  .rating {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .strip {
+    background: var(--navy);
+    color: #fff;
+    padding: 1.15rem 0;
+  }
+  .strip-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  .strip-row strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 1.2rem;
+    color: #f0e6d6;
+  }
+  .strip-row span {
+    color: #9aa6b5;
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+
+  .section { padding: 3.4rem 0; }
+  .kicker {
+    margin: 0 0 0.4rem;
+    color: var(--walnut);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.76rem;
+  }
+  .section h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    color: var(--navy);
+  }
+  .work-head {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .work-head p:last-child {
+    margin: 0;
+    color: var(--muted);
+    max-width: 36rem;
+  }
+
+  .services {
+    background: var(--white);
+    border-block: 1px solid var(--line);
+  }
+  .section-sub {
+    margin: 0 0 1.4rem;
+    color: var(--muted);
+    max-width: 36rem;
+  }
+  .svc {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .svc article {
+    padding: 1.2rem 1.2rem 1.25rem;
+    border-radius: 16px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+  }
+  .svc h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.35rem;
+    color: var(--navy);
+  }
+  .svc p { margin: 0; color: var(--muted); }
+
+  .visit-grid, .contact-grid { display: grid; gap: 1.6rem; }
+  .facts {
+    margin: 1.1rem 0 1.2rem;
+    display: grid;
+    gap: 0.85rem;
+  }
+  .facts div {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dt {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .facts dd { margin: 0; font-weight: 800; font-size: 1.02rem; }
+  .facts a:hover { color: var(--walnut); }
+  .facts em {
+    display: block;
+    margin-top: 0.25rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .visit-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+  .aside-card {
+    background: var(--navy);
+    color: #c9d2dc;
+    border-radius: 20px;
+    padding: 1.5rem;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .aside-kicker {
+    margin: 0 0 0.35rem;
+    color: var(--walnut-hot);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+  }
+  .aside-card h3 {
+    margin: 0 0 0.45rem;
+    color: #fff;
+    font-size: 1.6rem;
+  }
+  .aside-card p { margin: 0 0 1rem; }
+  .aside-card a {
+    font-weight: 800;
+    color: #fff;
+    border-bottom: 2px solid var(--walnut);
+    align-self: flex-start;
+  }
+
+  .contact { background: var(--cream-2); }
+  .lede-sm {
+    margin: 0.55rem 0 1.1rem;
+    color: var(--muted);
+    max-width: 28rem;
+  }
+  .form {
+    display: grid;
+    gap: 0.85rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.15rem;
+  }
+  .form label {
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+  .form input, .form textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.85rem 0.9rem;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .form input:focus, .form textarea:focus {
+    outline: 2px solid var(--walnut);
+    border-color: transparent;
+    background: #fff;
+  }
+  .two { display: grid; gap: 0.85rem; }
+  .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+  .status { margin: 0; min-height: 1.25em; font-weight: 700; color: var(--muted); }
+  .status.ok { color: #2f6b3a; }
+  .status.err { color: #9b1c1c; }
+
+  .foot {
+    background: #121820;
+    color: #93a0b0;
+    padding: 2rem 0 6.5rem;
+  }
+  .foot-inner { display: grid; gap: 0.85rem; }
+  .foot strong {
+    color: #fff;
+    font-family: var(--display);
+    font-size: 1.15rem;
+  }
+  .foot p { margin: 0.2rem 0 0; }
+  .foot-links {
+    display: flex; flex-wrap: wrap; gap: 0.8rem 1.1rem; font-weight: 700;
+  }
+  .foot-links a:hover { color: var(--walnut-hot); }
+  .copy { font-size: 0.84rem; color: #6b7788; }
+
+  .dock {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    padding: 0.65rem 0.8rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: rgba(247, 245, 242, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 860px) {
+    .desk { display: flex; }
+    .top-cta { display: inline-flex; }
+    .burger { display: none; }
+    .mnav { display: none !important; }
+    .hero { padding: 2.4rem 0 3rem; }
+    .hero-grid {
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 2.6rem;
+    }
+    .strip-row { grid-template-columns: repeat(4, 1fr); }
+    .work-head {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: end;
+    }
+    .svc { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .visit-grid, .contact-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.4rem;
+      align-items: start;
+    }
+    .two { grid-template-columns: 1fr 1fr; }
+    .dock { display: none; }
+    .foot { padding-bottom: 2.3rem; }
+    .foot-inner { grid-template-columns: 1.3fr 1fr; }
+    .copy { grid-column: 1 / -1; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mnav');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    if (open) menu?.setAttribute('hidden', '');
+    else menu?.removeAttribute('hidden');
+  });
+  menu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('hidden', '');
+    });
+  });
+
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  const status = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('contactSubmit') as HTMLButtonElement | null;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !status || !submitBtn) return;
+    status.textContent = 'Sending…';
+    status.className = 'status';
+    submitBtn.disabled = true;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get('name') || ''),
+      email: String(fd.get('email') || ''),
+      phone: String(fd.get('phone') || ''),
+      message: String(fd.get('message') || ''),
+      website_hp: String(fd.get('website_hp') || ''),
+    };
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.error) throw new Error(data.error || 'Something went wrong');
+      status.textContent = data.note || 'Thanks — we got your message.';
+      status.className = 'status ok';
+      form.reset();
+    } catch (err) {
+      status.textContent = err instanceof Error ? err.message : 'Could not send. Please call us.';
+      status.className = 'status err';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
